@@ -1,0 +1,2 @@
+CURRENT_PATH : /Users/mrvishal/Desktop/mangal_world/dev/Learn/backend/RestAPIs
+VIRTUAL_ENV_PATH : /Users/mrvishal/Desktop/mangal_world/dev/env/lbackenv

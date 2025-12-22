@@ -1,0 +1,98 @@
+# ==========================================================
+# LOGGING CONFIGURATION FILE
+# Used by logging.config.dictConfig() in Python / FastAPI
+# This file defines how logs are formatted, filtered, and stored
+# ==========================================================
+
+version: 1
+# Logging configuration schema version
+# Required by Python logging system (dictConfig supports only version 1)
+
+disable_existing_loggers: false
+# IMPORTANT:
+# false → keeps existing loggers from frameworks like:
+#          - uvicorn
+#          - fastapi
+#          - sqlalchemy
+# true  → disables all existing loggers unless explicitly redefined here
+# Best practice: ALWAYS keep this false in real applications
+
+# ----------------------------------------------------------
+# FORMATTERS
+# Define HOW log messages look
+# ----------------------------------------------------------
+
+formatters:
+
+  consoleFormatter:
+    # Formatter for console output (terminal / stdout)
+    # Optimized for developer readability
+    # No timestamp to keep logs clean and compact
+    format: "%(levelname)s | %(name)s | %(message)s"
+
+  fileFormatter:
+    # Formatter for file-based logs
+    # Includes timestamp for:
+    # - debugging
+    # - auditing
+    # - production issue tracing
+    format: "%(asctime)s | %(levelname)s | %(name)s | %(message)s"
+
+# ----------------------------------------------------------
+# HANDLERS
+# Define WHERE log messages are sent
+# ----------------------------------------------------------
+
+handlers:
+
+  consoleHandler:
+    # Sends log output to standard output (stdout)
+    # Used for:
+    # - local development
+    # - Docker container logs
+    # - Kubernetes logs
+    class: logging.StreamHandler
+    level: INFO  # Minimum log level processed by this handler
+    formatter: consoleFormatter
+    stream: ext://sys.stdout
+
+  fileHandler:
+    # Writes log messages to a file on disk
+    # Uses rotation to prevent unlimited file growth
+    class: logging.handlers.RotatingFileHandler
+    level: INFO # Minimum log level written to file
+    formatter: fileFormatter
+    filename: logs/app.log # Ensure the 'logs/' directory exists before starting the app
+    maxBytes: 10485760 # Rotate log file when it reaches 10 MB
+    backupCount: 3 # Keep last 3 rotated log files
+    encoding: utf-8 # Safe encoding for production environments
+
+# ----------------------------------------------------------
+# CUSTOM LOGGERS
+# Define module-specific logging behavior
+# ----------------------------------------------------------
+
+loggers:
+
+  mainLogger:
+    # Custom application-level logger
+    # Can be used as:
+    # logging.getLogger("mainLogger")
+    level: DEBUG
+    # Allows DEBUG logs for application code
+    handlers: [consoleHandler, fileHandler]
+    # Attach both console and file handlers
+    propagate: 0
+    # Prevent logs from being passed to the root logger again
+    # Avoids duplicate log entries
+
+# ----------------------------------------------------------
+# ROOT LOGGER
+# Global fallback logger for all modules
+# ----------------------------------------------------------
+
+root:
+  level: INFO
+  # Default log level for all loggers that do not have explicit configuration
+  handlers: [consoleHandler, fileHandler]
+  # Root logger sends logs to both console and file
