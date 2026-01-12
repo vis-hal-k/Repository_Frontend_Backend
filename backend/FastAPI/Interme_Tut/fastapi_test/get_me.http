@@ -1,0 +1,4 @@
+#200
+GET http://127.0.0.1:5000/Bearer/me HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJWaXNoYWwiLCJ1c2VyX2lkIjoxLCJleHAiOjE3Njc2OTQ0MzJ9.Np_N-aR2tsUbm5u-YXBAswo25M_9cyIr106kAJNmby8

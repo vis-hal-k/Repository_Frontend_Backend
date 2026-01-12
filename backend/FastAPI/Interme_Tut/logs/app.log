@@ -1,2 +1,347 @@
 2025-12-18 13:14:06,054 | INFO | mainLogger | INFO: Health check triggered (mainLogger)
 2025-12-18 13:14:06,055 | INFO | main | INFO: Health check triggered (module logger)
+2026-01-05 22:20:47,711 | INFO | mainLogger | Starting Server. . .
+2026-01-05 22:20:52,608 | INFO | mainLogger | Root
+2026-01-05 22:27:10,954 | INFO | mainLogger | Starting Server. . .
+2026-01-05 22:32:44,936 | INFO | mainLogger | Starting Server. . .
+2026-01-05 22:32:50,869 | INFO | mainLogger | Root
+2026-01-05 22:35:40,389 | INFO | mainLogger | Starting Server. . .
+2026-01-05 22:43:58,826 | INFO | mainLogger | Starting Server. . .
+2026-01-05 22:44:06,635 | INFO | sqlalchemy.engine.Engine | select pg_catalog.version()
+2026-01-05 22:44:06,635 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 22:44:06,635 | INFO | sqlalchemy.engine.Engine | select current_schema()
+2026-01-05 22:44:06,635 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 22:44:06,637 | INFO | sqlalchemy.engine.Engine | show standard_conforming_strings
+2026-01-05 22:44:06,637 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 22:44:06,638 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-05 22:44:06,638 | INFO | sqlalchemy.engine.Engine | 
+                        CREATE TABLE IF NOT EXISTS "postgres".users(
+                        id SERIAL PRIMARY KEY,
+                        username VARCHAR(255) UNIQUE NOT NULL,
+                        hashed_password VARCHAR(255) NOT NULL ,
+                        email VARCHAR(255) NOT NULL
+                        is_active VARCHAR(255) NOT NULL
+                        )
+                        
+2026-01-05 22:44:06,638 | INFO | sqlalchemy.engine.Engine | [generated in 0.00005s] {}
+2026-01-05 22:44:06,639 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-05 22:44:36,123 | INFO | sqlalchemy.engine.Engine | select pg_catalog.version()
+2026-01-05 22:44:36,123 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 22:44:36,123 | INFO | sqlalchemy.engine.Engine | select current_schema()
+2026-01-05 22:44:36,123 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 22:44:36,124 | INFO | sqlalchemy.engine.Engine | show standard_conforming_strings
+2026-01-05 22:44:36,124 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 22:44:36,124 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-05 22:44:36,124 | INFO | sqlalchemy.engine.Engine | 
+                        CREATE TABLE IF NOT EXISTS "postgres".users(
+                        id SERIAL PRIMARY KEY,
+                        username VARCHAR(255) UNIQUE NOT NULL,
+                        hashed_password VARCHAR(255) NOT NULL ,
+                        email VARCHAR(255) NOT NULL,
+                        is_active VARCHAR(255) NOT NULL
+                        )
+                        
+2026-01-05 22:44:36,124 | INFO | sqlalchemy.engine.Engine | [generated in 0.00005s] {}
+2026-01-05 22:44:36,126 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-05 22:44:49,329 | INFO | sqlalchemy.engine.Engine | select pg_catalog.version()
+2026-01-05 22:44:49,330 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 22:44:49,331 | INFO | sqlalchemy.engine.Engine | select current_schema()
+2026-01-05 22:44:49,331 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 22:44:49,333 | INFO | sqlalchemy.engine.Engine | show standard_conforming_strings
+2026-01-05 22:44:49,333 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 22:44:49,334 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-05 22:44:49,335 | INFO | sqlalchemy.engine.Engine | 
+                        CREATE TABLE IF NOT EXISTS "public".users(
+                        id SERIAL PRIMARY KEY,
+                        username VARCHAR(255) UNIQUE NOT NULL,
+                        hashed_password VARCHAR(255) NOT NULL ,
+                        email VARCHAR(255) NOT NULL,
+                        is_active VARCHAR(255) NOT NULL
+                        )
+                        
+2026-01-05 22:44:49,335 | INFO | sqlalchemy.engine.Engine | [generated in 0.00016s] {}
+2026-01-05 22:44:49,358 | INFO | sqlalchemy.engine.Engine | 
+                        INSERT INTO "postgres"."users" ("username" , "hashed_password" , "email" , "is_active")
+                        VALUES (%(username)s, %(hashed_password)s , %(email)s , %(is_active)s)
+                        RETURNING id ;
+                        
+2026-01-05 22:44:49,358 | INFO | sqlalchemy.engine.Engine | [generated in 0.00014s] {'username': 'Vishal', 'hashed_password': '$2b$12$UIg2DLa63pC.xCoPzIpPF.Mv1Z24Q9SSAAHCSULWmdTV/KgwbmBgm', 'email': 'vishal31ku@gmail.com', 'is_active': True}
+2026-01-05 22:44:49,362 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-05 22:45:14,182 | INFO | sqlalchemy.engine.Engine | select pg_catalog.version()
+2026-01-05 22:45:14,182 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 22:45:14,183 | INFO | sqlalchemy.engine.Engine | select current_schema()
+2026-01-05 22:45:14,183 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 22:45:14,183 | INFO | sqlalchemy.engine.Engine | show standard_conforming_strings
+2026-01-05 22:45:14,183 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 22:45:14,184 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-05 22:45:14,184 | INFO | sqlalchemy.engine.Engine | 
+                        CREATE TABLE IF NOT EXISTS "public".users(
+                        id SERIAL PRIMARY KEY,
+                        username VARCHAR(255) UNIQUE NOT NULL,
+                        hashed_password VARCHAR(255) NOT NULL ,
+                        email VARCHAR(255) NOT NULL,
+                        is_active VARCHAR(255) NOT NULL
+                        )
+                        
+2026-01-05 22:45:14,184 | INFO | sqlalchemy.engine.Engine | [generated in 0.00005s] {}
+2026-01-05 22:45:14,194 | INFO | sqlalchemy.engine.Engine | 
+                        INSERT INTO "public"."users" ("username" , "hashed_password" , "email" , "is_active")
+                        VALUES (%(username)s, %(hashed_password)s , %(email)s , %(is_active)s)
+                        RETURNING id ;
+                        
+2026-01-05 22:45:14,194 | INFO | sqlalchemy.engine.Engine | [generated in 0.00007s] {'username': 'Vishal', 'hashed_password': '$2b$12$dqariWJud7kEvbEYWaXqxuNDUsywC8WeqlETXHRur.zQnWoeXKSQK', 'email': 'vishal31ku@gmail.com', 'is_active': True}
+2026-01-05 22:45:14,196 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-05 22:48:26,752 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-05 22:48:26,753 | INFO | sqlalchemy.engine.Engine | select id, username, hashed_password FROM "public".users WHERE username=%(username)s
+2026-01-05 22:48:26,753 | INFO | sqlalchemy.engine.Engine | [generated in 0.00019s] {'username': 'Vishal'}
+2026-01-05 22:48:26,934 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-05 22:48:37,033 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-05 22:48:37,034 | INFO | sqlalchemy.engine.Engine | select id, username, hashed_password FROM "public".users WHERE username=%(username)s
+2026-01-05 22:48:37,034 | INFO | sqlalchemy.engine.Engine | [cached since 10.28s ago] {'username': 'Vishal'}
+2026-01-05 22:48:37,217 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-05 22:49:24,104 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-05 22:49:24,105 | INFO | sqlalchemy.engine.Engine | select id, username, hashed_password FROM "public".users WHERE username=%(username)s
+2026-01-05 22:49:24,105 | INFO | sqlalchemy.engine.Engine | [cached since 57.35s ago] {'username': 'Vishal'}
+2026-01-05 22:49:24,300 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-05 22:49:31,773 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-05 22:49:31,773 | INFO | sqlalchemy.engine.Engine | select id, username, hashed_password FROM "public".users WHERE username=%(username)s
+2026-01-05 22:49:31,773 | INFO | sqlalchemy.engine.Engine | [cached since 65.02s ago] {'username': 'Vishal'}
+2026-01-05 22:49:31,952 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-05 22:52:06,071 | INFO | sqlalchemy.engine.Engine | select pg_catalog.version()
+2026-01-05 22:52:06,072 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 22:52:06,073 | INFO | sqlalchemy.engine.Engine | select current_schema()
+2026-01-05 22:52:06,073 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 22:52:06,073 | INFO | sqlalchemy.engine.Engine | show standard_conforming_strings
+2026-01-05 22:52:06,073 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 22:52:06,074 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-05 22:52:06,074 | INFO | sqlalchemy.engine.Engine | select id, username, hashed_password FROM "public".users WHERE username=%(username)s
+2026-01-05 22:52:06,074 | INFO | sqlalchemy.engine.Engine | [generated in 0.00010s] {'username': 'Vishal'}
+2026-01-05 22:52:06,292 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-05 22:52:19,658 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-05 22:52:19,659 | INFO | sqlalchemy.engine.Engine | select id, username, hashed_password FROM "public".users WHERE username=%(username)s
+2026-01-05 22:52:19,659 | INFO | sqlalchemy.engine.Engine | [cached since 13.58s ago] {'username': 'Vishal'}
+2026-01-05 22:52:19,869 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-05 22:54:04,501 | INFO | mainLogger | Root
+2026-01-05 23:13:36,644 | INFO | mainLogger | Starting Server. . .
+2026-01-05 23:15:31,032 | INFO | mainLogger | Starting Server. . .
+2026-01-05 23:17:23,597 | INFO | sqlalchemy.engine.Engine | select pg_catalog.version()
+2026-01-05 23:17:23,598 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 23:17:23,599 | INFO | sqlalchemy.engine.Engine | select current_schema()
+2026-01-05 23:17:23,599 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 23:17:23,599 | INFO | sqlalchemy.engine.Engine | show standard_conforming_strings
+2026-01-05 23:17:23,599 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 23:17:23,599 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-05 23:17:23,600 | INFO | sqlalchemy.engine.Engine | 
+                        CREATE TABLE IF NOT EXISTS "public".users(
+                        id SERIAL PRIMARY KEY,
+                        username VARCHAR(255) UNIQUE NOT NULL,
+                        hashed_password VARCHAR(255) NOT NULL ,
+                        email VARCHAR(255) NOT NULL,
+                        is_active VARCHAR(255) NOT NULL
+                        )
+                        
+2026-01-05 23:17:23,600 | INFO | sqlalchemy.engine.Engine | [generated in 0.00005s] {}
+2026-01-05 23:17:23,600 | INFO | sqlalchemy.engine.Engine | 
+                        INSERT INTO "public"."users" ("username" , "hashed_password" , "email" , "is_active")
+                        VALUES (%(username)s, %(hashed_password)s , %(email)s , %(is_active)s)
+                        RETURNING id ;
+                        
+2026-01-05 23:17:23,600 | INFO | sqlalchemy.engine.Engine | [generated in 0.00006s] {'username': 'sneha', 'hashed_password': '$2b$12$WPIwauUqsQBmpcosuY0S.eXnQ0jXOWyLOapuMREXCl5ePO1Pus9BO', 'email': 'sneharani0231@gmail.com', 'is_active': True}
+2026-01-05 23:17:23,602 | INFO | sqlalchemy.engine.Engine | COMMIT
+2026-01-05 23:17:46,520 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-05 23:17:46,520 | INFO | sqlalchemy.engine.Engine | select id, username, hashed_password FROM "public".users WHERE username=%(username)s
+2026-01-05 23:17:46,520 | INFO | sqlalchemy.engine.Engine | [generated in 0.00015s] {'username': 'Vishal'}
+2026-01-05 23:17:46,699 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-05 23:33:23,846 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-05 23:33:23,847 | INFO | sqlalchemy.engine.Engine | select id, username, hashed_password FROM "public".users WHERE username=%(username)s
+2026-01-05 23:33:23,847 | INFO | sqlalchemy.engine.Engine | [cached since 937.3s ago] {'username': 'Vishal'}
+2026-01-05 23:33:24,032 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-05 23:46:25,701 | INFO | sqlalchemy.engine.Engine | select pg_catalog.version()
+2026-01-05 23:46:25,701 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 23:46:25,701 | INFO | sqlalchemy.engine.Engine | select current_schema()
+2026-01-05 23:46:25,702 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 23:46:25,702 | INFO | sqlalchemy.engine.Engine | show standard_conforming_strings
+2026-01-05 23:46:25,702 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 23:46:25,702 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-05 23:46:25,702 | INFO | sqlalchemy.engine.Engine | select id, username, hashed_password FROM "public".users WHERE username=%(username)s
+2026-01-05 23:46:25,702 | INFO | sqlalchemy.engine.Engine | [generated in 0.00005s] {'username': 'vishal'}
+2026-01-05 23:46:25,704 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-05 23:49:28,450 | INFO | sqlalchemy.engine.Engine | select pg_catalog.version()
+2026-01-05 23:49:28,450 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 23:49:28,451 | INFO | sqlalchemy.engine.Engine | select current_schema()
+2026-01-05 23:49:28,451 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 23:49:28,451 | INFO | sqlalchemy.engine.Engine | show standard_conforming_strings
+2026-01-05 23:49:28,451 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 23:49:28,451 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-05 23:49:28,452 | INFO | sqlalchemy.engine.Engine | select id, username, hashed_password FROM "public".users WHERE username=%(username)s
+2026-01-05 23:49:28,452 | INFO | sqlalchemy.engine.Engine | [generated in 0.00005s] {'username': 'vishal'}
+2026-01-05 23:49:28,454 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-05 23:50:07,588 | INFO | mainLogger | Starting Server. . .
+2026-01-05 23:52:45,430 | INFO | sqlalchemy.engine.Engine | select pg_catalog.version()
+2026-01-05 23:52:45,431 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 23:52:45,444 | INFO | sqlalchemy.engine.Engine | select current_schema()
+2026-01-05 23:52:45,445 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 23:52:45,446 | INFO | sqlalchemy.engine.Engine | show standard_conforming_strings
+2026-01-05 23:52:45,446 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 23:52:45,448 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-05 23:52:45,451 | INFO | sqlalchemy.engine.Engine | select id, username, hashed_password FROM "public".users WHERE username=%(username)s
+2026-01-05 23:52:45,451 | INFO | sqlalchemy.engine.Engine | [generated in 0.00105s] {'username': 'vishal'}
+2026-01-05 23:53:39,492 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-05 23:53:48,223 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-05 23:53:48,225 | INFO | sqlalchemy.engine.Engine | select id, username, hashed_password FROM "public".users WHERE username=%(username)s
+2026-01-05 23:53:48,225 | INFO | sqlalchemy.engine.Engine | [cached since 62.78s ago] {'username': 'Vishal'}
+2026-01-05 23:54:13,461 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-05 23:58:50,213 | INFO | mainLogger | Starting Server. . .
+2026-01-05 23:59:10,482 | INFO | sqlalchemy.engine.Engine | select pg_catalog.version()
+2026-01-05 23:59:10,484 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 23:59:10,499 | INFO | sqlalchemy.engine.Engine | select current_schema()
+2026-01-05 23:59:10,499 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 23:59:10,500 | INFO | sqlalchemy.engine.Engine | show standard_conforming_strings
+2026-01-05 23:59:10,501 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-05 23:59:10,502 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-05 23:59:10,505 | INFO | sqlalchemy.engine.Engine | select id, username, hashed_password FROM "public".users WHERE username=%(username)s
+2026-01-05 23:59:10,506 | INFO | sqlalchemy.engine.Engine | [generated in 0.00131s] {'username': 'vishal'}
+2026-01-05 23:59:29,579 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-06 00:31:48,267 | INFO | mainLogger | Starting Server. . .
+2026-01-06 00:34:41,377 | INFO | sqlalchemy.engine.Engine | select pg_catalog.version()
+2026-01-06 00:34:41,377 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-06 00:34:41,378 | INFO | sqlalchemy.engine.Engine | select current_schema()
+2026-01-06 00:34:41,378 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-06 00:34:41,378 | INFO | sqlalchemy.engine.Engine | show standard_conforming_strings
+2026-01-06 00:34:41,378 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-06 00:34:41,379 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-06 00:34:41,379 | INFO | sqlalchemy.engine.Engine | select id, username, hashed_password FROM "public".users WHERE username=%(username)s
+2026-01-06 00:34:41,379 | INFO | sqlalchemy.engine.Engine | [generated in 0.00007s] {'username': 'vishal'}
+2026-01-06 00:34:41,380 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-06 00:34:49,675 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-06 00:34:49,676 | INFO | sqlalchemy.engine.Engine | select id, username, hashed_password FROM "public".users WHERE username=%(username)s
+2026-01-06 00:34:49,676 | INFO | sqlalchemy.engine.Engine | [cached since 8.297s ago] {'username': 'Vishal'}
+2026-01-06 00:34:49,883 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-06 00:36:31,972 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-06 00:36:31,974 | INFO | sqlalchemy.engine.Engine | 
+                        CREATE TABLE IF NOT EXISTS "public".users(
+                        id SERIAL PRIMARY KEY,
+                        username VARCHAR(255) UNIQUE NOT NULL,
+                        hashed_password VARCHAR(255) NOT NULL ,
+                        email VARCHAR(255) NOT NULL,
+                        is_active VARCHAR(255) NOT NULL
+                        )
+                        
+2026-01-06 00:36:31,974 | INFO | sqlalchemy.engine.Engine | [generated in 0.00007s] {}
+2026-01-06 00:36:31,974 | INFO | sqlalchemy.engine.Engine | 
+                        INSERT INTO "public"."users" ("username" , "hashed_password" , "email" , "is_active")
+                        VALUES (%(username)s, %(hashed_password)s , %(email)s , %(is_active)s)
+                        RETURNING id ;
+                        
+2026-01-06 00:36:31,974 | INFO | sqlalchemy.engine.Engine | [generated in 0.00005s] {'username': 'sneha', 'hashed_password': '$2b$12$nkkFrvXRd0hi9VzWAZNcb./rQQbtO3laYfMKa14dzKW6mXGlsIAkm', 'email': 'sneharani0231@gmail.com', 'is_active': True}
+2026-01-06 00:36:31,977 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-06 00:37:04,442 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-06 00:37:04,442 | INFO | sqlalchemy.engine.Engine | SELECT id, username, email, is_active FROM "public".users WHERE username=%(username)s
+2026-01-06 00:37:04,443 | INFO | sqlalchemy.engine.Engine | [generated in 0.00009s] {'username': 'Vishal'}
+2026-01-06 00:37:04,443 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-06 00:37:40,372 | INFO | sqlalchemy.engine.Engine | select pg_catalog.version()
+2026-01-06 00:37:40,372 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-06 00:37:40,373 | INFO | sqlalchemy.engine.Engine | select current_schema()
+2026-01-06 00:37:40,373 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-06 00:37:40,373 | INFO | sqlalchemy.engine.Engine | show standard_conforming_strings
+2026-01-06 00:37:40,373 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-06 00:37:40,374 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-06 00:37:40,374 | INFO | sqlalchemy.engine.Engine | SELECT id, username, email, is_active FROM "public".users WHERE username=%(username)s
+2026-01-06 00:37:40,374 | INFO | sqlalchemy.engine.Engine | [generated in 0.00011s] {'username': 'Vishal'}
+2026-01-06 00:37:40,376 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-06 00:37:59,547 | INFO | sqlalchemy.engine.Engine | select pg_catalog.version()
+2026-01-06 00:37:59,547 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-06 00:37:59,548 | INFO | sqlalchemy.engine.Engine | select current_schema()
+2026-01-06 00:37:59,548 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-06 00:37:59,548 | INFO | sqlalchemy.engine.Engine | show standard_conforming_strings
+2026-01-06 00:37:59,548 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-06 00:37:59,549 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-06 00:37:59,549 | INFO | sqlalchemy.engine.Engine | SELECT id, username, email, is_active FROM "public".users WHERE username=%(username)s
+2026-01-06 00:37:59,549 | INFO | sqlalchemy.engine.Engine | [generated in 0.00007s] {'username': 'Vishal'}
+2026-01-06 00:37:59,551 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-06 09:54:40,845 | INFO | mainLogger | Starting Server. . .
+2026-01-06 09:55:02,227 | INFO | mainLogger | Starting Server. . .
+2026-01-06 09:56:51,579 | INFO | sqlalchemy.engine.Engine | select pg_catalog.version()
+2026-01-06 09:56:51,580 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-06 09:56:51,583 | INFO | sqlalchemy.engine.Engine | select current_schema()
+2026-01-06 09:56:51,583 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-06 09:56:51,584 | INFO | sqlalchemy.engine.Engine | show standard_conforming_strings
+2026-01-06 09:56:51,584 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-06 09:56:51,585 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-06 09:56:51,587 | INFO | sqlalchemy.engine.Engine | select id, username, hashed_password FROM "public".users WHERE username=%(username)s
+2026-01-06 09:56:51,587 | INFO | sqlalchemy.engine.Engine | [generated in 0.00051s] {'username': 'Vishal'}
+2026-01-06 09:56:52,738 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-06 09:58:52,492 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-06 09:58:52,493 | INFO | sqlalchemy.engine.Engine | select id, username, hashed_password FROM "public".users WHERE username=%(username)s
+2026-01-06 09:58:52,493 | INFO | sqlalchemy.engine.Engine | [cached since 120.9s ago] {'username': 'Vishal'}
+2026-01-06 09:58:52,675 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-06 10:00:58,935 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-06 10:00:58,939 | INFO | sqlalchemy.engine.Engine | SELECT id, username, email, is_active FROM "public".users WHERE username=%(username)s
+2026-01-06 10:00:58,940 | INFO | sqlalchemy.engine.Engine | [generated in 0.00190s] {'username': 'Vishal'}
+2026-01-06 10:01:32,968 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-06 10:02:11,219 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-06 10:02:11,222 | INFO | sqlalchemy.engine.Engine | SELECT id, username, email, is_active FROM "public".users WHERE username=%(username)s
+2026-01-06 10:02:11,223 | INFO | sqlalchemy.engine.Engine | [cached since 72.28s ago] {'username': 'Vishal'}
+2026-01-06 10:27:17,242 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-10 17:34:06,732 | INFO | mainLogger | Starting Server. . .
+2026-01-10 17:34:23,028 | INFO | sqlalchemy.engine.Engine | select pg_catalog.version()
+2026-01-10 17:34:23,028 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-10 17:34:23,029 | INFO | sqlalchemy.engine.Engine | select current_schema()
+2026-01-10 17:34:23,029 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-10 17:34:23,030 | INFO | sqlalchemy.engine.Engine | show standard_conforming_strings
+2026-01-10 17:34:23,030 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-10 17:34:23,030 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-10 17:34:23,030 | INFO | sqlalchemy.engine.Engine | select id, username, hashed_password FROM "public".users WHERE username=%(username)s
+2026-01-10 17:34:23,030 | INFO | sqlalchemy.engine.Engine | [generated in 0.00005s] {'username': 'Vishal'}
+2026-01-10 17:34:23,230 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-10 17:35:32,053 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-10 17:35:32,055 | INFO | sqlalchemy.engine.Engine | select id, username, hashed_password FROM "public".users WHERE username=%(username)s
+2026-01-10 17:35:32,055 | INFO | sqlalchemy.engine.Engine | [cached since 69.02s ago] {'username': 'Vishal'}
+2026-01-10 17:35:32,240 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-10 17:35:55,359 | INFO | mainLogger | Starting Server. . .
+2026-01-10 17:36:05,786 | INFO | sqlalchemy.engine.Engine | select pg_catalog.version()
+2026-01-10 17:36:05,786 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-10 17:36:05,789 | INFO | sqlalchemy.engine.Engine | select current_schema()
+2026-01-10 17:36:05,789 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-10 17:36:05,789 | INFO | sqlalchemy.engine.Engine | show standard_conforming_strings
+2026-01-10 17:36:05,789 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-10 17:36:05,790 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-10 17:36:05,791 | INFO | sqlalchemy.engine.Engine | select id, username, hashed_password FROM "public".users WHERE username=%(username)s
+2026-01-10 17:36:05,792 | INFO | sqlalchemy.engine.Engine | [generated in 0.00055s] {'username': 'Vishal'}
+2026-01-10 17:37:13,286 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-10 17:39:48,694 | INFO | mainLogger | Starting Server. . .
+2026-01-10 17:39:51,065 | INFO | sqlalchemy.engine.Engine | select pg_catalog.version()
+2026-01-10 17:39:51,065 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-10 17:39:51,067 | INFO | sqlalchemy.engine.Engine | select current_schema()
+2026-01-10 17:39:51,067 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-10 17:39:51,068 | INFO | sqlalchemy.engine.Engine | show standard_conforming_strings
+2026-01-10 17:39:51,068 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-10 17:39:51,068 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-10 17:39:51,069 | INFO | sqlalchemy.engine.Engine | select id, username, hashed_password FROM "public".users WHERE username=%(username)s
+2026-01-10 17:39:51,069 | INFO | sqlalchemy.engine.Engine | [generated in 0.00029s] {'username': 'Vishal'}
+2026-01-10 17:47:44,035 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-10 17:49:36,044 | INFO | sqlalchemy.engine.Engine | select pg_catalog.version()
+2026-01-10 17:49:36,044 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-10 17:49:36,046 | INFO | sqlalchemy.engine.Engine | select current_schema()
+2026-01-10 17:49:36,046 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-10 17:49:36,047 | INFO | sqlalchemy.engine.Engine | show standard_conforming_strings
+2026-01-10 17:49:36,047 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-10 17:49:36,047 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-10 17:49:36,048 | INFO | sqlalchemy.engine.Engine | select id, username, hashed_password FROM "public".users WHERE username=%(username)s
+2026-01-10 17:49:36,048 | INFO | sqlalchemy.engine.Engine | [generated in 0.00033s] {'username': 'Vishal'}
+2026-01-10 17:50:00,917 | INFO | sqlalchemy.engine.Engine | ROLLBACK
+2026-01-10 17:50:13,105 | INFO | sqlalchemy.engine.Engine | select pg_catalog.version()
+2026-01-10 17:50:13,105 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-10 17:50:13,107 | INFO | sqlalchemy.engine.Engine | select current_schema()
+2026-01-10 17:50:13,107 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-10 17:50:13,108 | INFO | sqlalchemy.engine.Engine | show standard_conforming_strings
+2026-01-10 17:50:13,108 | INFO | sqlalchemy.engine.Engine | [raw sql] {}
+2026-01-10 17:50:13,109 | INFO | sqlalchemy.engine.Engine | BEGIN (implicit)
+2026-01-10 17:50:13,110 | INFO | sqlalchemy.engine.Engine | select id, username, hashed_password FROM "public".users WHERE username=%(username)s
+2026-01-10 17:50:13,110 | INFO | sqlalchemy.engine.Engine | [generated in 0.00039s] {'username': 'Vishal'}
+2026-01-10 17:50:23,223 | INFO | sqlalchemy.engine.Engine | UPDATE public.users SET refresh_token_hash=%(hash)s,
+                refresh_token_expires_at = %(expiry)s 
+                WHERE id = %(user_id)s
+         
+2026-01-10 17:50:23,226 | INFO | sqlalchemy.engine.Engine | [generated in 0.00507s] {'hash': '4f2aac325298e2e6846725378262790e60c5c67367f4992f8ab47107d553fd4e', 'expiry': datetime.datetime(2026, 1, 17, 12, 20, 19, 677156, tzinfo=datetime.timezone.utc), 'user_id': 1}
+2026-01-10 17:50:25,267 | INFO | sqlalchemy.engine.Engine | COMMIT
