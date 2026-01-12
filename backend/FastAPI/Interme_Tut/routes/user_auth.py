@@ -12,6 +12,8 @@ from core import settings
 from jose import jwt, JWTError
 import secrets 
 import hashlib 
+from core.logging import get_logger
+logger = get_logger() 
 # Add OAuth2 scheme for token extraction
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/login") 
 
@@ -62,6 +64,10 @@ class Token(BaseModel):
 class LoginRequest(BaseModel):
     username: str 
     password: str 
+
+class RefreshTokenRequest(BaseModel):
+    refresh_token: str 
+
 
 def create_access_token(data:dict) -> str:
     to_encode = data.copy() 
@@ -128,7 +134,6 @@ def refresh_token_expiry() -> datetime:
     return datetime.now(timezone.utc) + timedelta(days=settings.REFRESH_TOKEN_EXPIRE_DAYS)
 
 
-
 @user_auth_r.post("/login")
 async def login(form_data: LoginRequest , db:Session=Depends(get_db)):
     username = form_data.username
@@ -166,4 +171,48 @@ async def login(form_data: LoginRequest , db:Session=Depends(get_db)):
         "access_token" : access_token ,
         "refresh_token" : refresh_token ,
         "token_type" : "bearer"
+    }
+
+
+# Refresh Token. 
+@user_auth_r.post("/refresh")
+async def refresh_token(payload: RefreshTokenRequest , db : Session = Depends(get_db)):
+    refresh_tok = payload.refresh_token 
+    refresh_tok_hash = hash_refresh_token(refresh_tok) 
+    # Find user by refresh token hash
+    query = text(''' select id , username,  refresh_token_expires_at FROM public.users WHERE refresh_token_hash = :hash''')
+    result = db.execute(query , {"hash" :refresh_tok_hash}) 
+    user = result.mappings().fetchone() 
+    if not user :
+        raise HTTPException(
+            status_code = status.HTTP_401_UNAUTHORIZED ,detail = "Invalid refresh token") 
+
+    if user["refresh_token_expires_at"] < datetime.now(timezone.utc): 
+        raise HTTPException(status_code = status.HTTP_401_UNAUTHORIZED , 
+                                            detail = "Refresh token expiry") 
+
+    # Create the new refresh token and stored in the DB.
+    user_id  = user["id"] 
+    new_access_token = create_access_token(
+        data = {
+            "sub" : user["username"],
+            "user_id" : user["id"]
+        }
+    ) 
+    new_refresh_token = create_refresh_token() 
+    new_refresh_token_hash = hash_refresh_token(new_refresh_token) 
+    new_expiry = refresh_token_expiry() 
+    query = text('''UPDATE public.users SET 
+                    refresh_token_hash = :hash,
+                    refresh_token_expires_at = :expiry 
+                    WHERE id = :id''')
+    db.execute(query , {"hash" : new_refresh_token_hash ,
+                        "expiry": new_expiry ,
+                        "id" : user_id
+                         }) 
+    db.commit() 
+    logger.info("Refresh token rotated for user_id = %s",user_id) 
+    return {
+        "access_token" : new_access_token ,
+        "refresh_token" : new_refresh_token_hash
     }
